@@ -1,5 +1,9 @@
 package self.spring.cloud.sample.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -37,4 +41,17 @@ public class ComputeController {
     	return employee;
     }
 
+    @RequestMapping(value = "/queryEmployeeAll" ,method = RequestMethod.GET)
+    public List<Employee> queryEmployeeAll(){
+    	Map<String, Object> paramMap = new HashMap<String, Object>();
+//    	paramMap.put("offset", 1);
+//    	paramMap.put("limit ", 2);
+    	paramMap.put("pageNum", 1);
+    	paramMap.put("pageSize ", 2);
+    	
+    	List<Employee> employees = employeeMapper.selectAll(paramMap);
+    	
+    	System.out.println("employee:"+employees);
+    	return employees;
+    }
 }
