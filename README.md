@@ -20,6 +20,10 @@ You can config PageHelper as the following:
 application.properties:
 ```properties
 pagehelper.propertyName=propertyValue
+pagehelper.helperDialect=mysql
+pagehelper.reasonable=true
+pagehelper.supportMethodsArguments=true
+pagehelper.params=count=countSql;pageNum=offset;pageSize=limit;
 ```
 注意 pagehelper 配置，因为分页插件根据自己的扩展不同，支持的参数也不同，所以不能用固定的对象接收参数，所以这里使用的 `Map<String,String>`，因此参数名是什么这里就写什么，IDE 也不会有自动提示。
 
