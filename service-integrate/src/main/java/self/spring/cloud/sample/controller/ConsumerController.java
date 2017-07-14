@@ -5,17 +5,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import self.spring.cloud.sample.dto.Employee;
 import self.spring.cloud.sample.facade.ComputeFacade;
 
 @RestController
 public class ConsumerController {
 
     @Autowired
-    ComputeFacade computeClient;
+    ComputeFacade ComputeFacade;
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public Integer add() {
-        return computeClient.add(10, 20);
+    public String add() {
+        return ComputeFacade.add(10, 20);
     }
-
+    @RequestMapping(value = "/queryEmployee", method = RequestMethod.GET)
+    public Employee queryEmployee() {
+        return ComputeFacade.queryEmployee();
+    }
 }
