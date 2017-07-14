@@ -1,5 +1,9 @@
 package self.spring.cloud.sample.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -8,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.github.pagehelper.PageInfo;
 
 import self.spring.cloud.sample.dao.client.EmployeeMapper;
 import self.spring.cloud.sample.dao.model.Employee;
@@ -35,6 +41,20 @@ public class ComputeController {
     	
     	System.out.println("employee:"+employee);
     	return employee;
+    }
+    
+    @RequestMapping(value = "/queryEmployeeAll" ,method = RequestMethod.GET)
+    public PageInfo queryEmployeeAll(){
+    	Map<String, Object> paramMap = new HashMap<String, Object>();
+//    	paramMap.put("pageNum", 3);
+//    	paramMap.put("pageSize", 2);
+    	paramMap.put("offset", 3);
+    	paramMap.put("limit", 2);
+    	List<Employee>  employees = employeeMapper.selectAllByMap(paramMap);
+    	PageInfo page = new PageInfo(employees);
+    	System.out.println("employee:"+employees);
+    	
+    	return page;
     }
 
 }
