@@ -29,3 +29,7 @@ pagehelper.params=count=countSql;pageNum=offset;pageSize=limit;
 
 关于可配置的属性请参考 [如何使用分页插件](https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/zh/HowToUse.md)。
 
+## Hystrix
+
+
+

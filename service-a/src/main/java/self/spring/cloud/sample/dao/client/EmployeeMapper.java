@@ -13,10 +13,10 @@ public interface EmployeeMapper {
     int insertSelective(Employee record);
 
     Employee selectByPrimaryKey(Integer id);
-    
-    List<Employee> selectAllByMap(Map<String,Object> paramMap);
 
     int updateByPrimaryKeySelective(Employee record);
 
     int updateByPrimaryKey(Employee record);
+    
+    List<Employee> selectAllByMap(Map<String,Object> paramMap);
 }

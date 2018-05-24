@@ -7,6 +7,8 @@ public class Employee implements Serializable {
 
     private String name;
 
+    private Integer shardingId;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -23,5 +25,13 @@ public class Employee implements Serializable {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    public Integer getShardingId() {
+        return shardingId;
+    }
+
+    public void setShardingId(Integer shardingId) {
+        this.shardingId = shardingId;
     }
 }
