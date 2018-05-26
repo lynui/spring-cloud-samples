@@ -37,9 +37,6 @@ public class DruidDBConfig {
         return datasource;
     }
 
-    
-
-
     @Bean(name = "wallConfig")
     WallConfig wallFilterConfig(){
         WallConfig wc = new WallConfig ();

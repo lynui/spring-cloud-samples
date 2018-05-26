@@ -69,7 +69,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <select id="selectAllByMap" resultMap="BaseResultMap" parameterType="Map" >
-    /*!mycat:schema=TESTDB_img*/select 
+    select 
     <include refid="Base_Column_List" />
     from employee
   </select>

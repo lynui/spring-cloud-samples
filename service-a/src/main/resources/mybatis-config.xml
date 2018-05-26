@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--plugins插件之 分页拦截器 -->
+	<plugins>
+		<plugin interceptor="self.spring.cloud.sample.interceptor.ImgDataBaseInterceptor">
+			 <property name="someProperty" value="100"/>
+		</plugin>
+	</plugins>
+</configuration>
