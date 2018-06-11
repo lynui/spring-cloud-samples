@@ -12,8 +12,8 @@ import self.spring.cloud.sample.interceptor.ShadowDataBaseInterceptor;
 @AutoConfigureAfter(PageHelperAutoConfiguration.class)
 public class ShadowDataBaseConfig {
 
-	@Bean
-	ShadowDataBaseInterceptor addImgDataBaseInterceptor(){
-		return new ShadowDataBaseInterceptor();
-	}
+//	@Bean
+//	ShadowDataBaseInterceptor addImgDataBaseInterceptor(){
+//		return new ShadowDataBaseInterceptor();
+//	}
 }
